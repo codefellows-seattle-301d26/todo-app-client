@@ -15,15 +15,12 @@ var __API_URL__ = 'http://localhost:3000';
   }
 
   Task.prototype.toHtml = function() {
-    let template = Handlebars.compile($('#task-template').text());
-    return template(this);
+    return Handlebars.compile($('#task-template').text())(this);
   }
 
   Task.all = [];
 
-  Task.loadAll = rows => {
-   Task.all = rows.sort((a, b) => b.title - a.title).map(task => new Task(task));
-  }
+  Task.loadAll = rows => Task.all = rows.sort((a, b) => b.title - a.title).map(task => new Task(task))
 
   Task.fetchAll = callback =>
     $.get(`${__API_URL__}/tasks`)

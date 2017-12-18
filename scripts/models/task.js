@@ -1,8 +1,8 @@
 'use strict';
 
 var app = {};
-var __API_URL__ = 'http://localhost:3000';
-// var __API_URL__ = 'https://todo-app-301d28.herokuapp.com/';
+// var __API_URL__ = 'http://localhost:3000';
+var __API_URL__ = 'https://book-app-301.herokuapp.com';
 
 (function(module) {
   function errorCallback(err) {
